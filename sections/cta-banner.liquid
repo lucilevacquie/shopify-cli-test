@@ -1,0 +1,88 @@
+{{ 'section-cta-banner.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #Banner-{{ section.id }}::after {
+    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+  }
+{%- endstyle -%}
+
+<div class="w-screen h-[448px] relative">
+  <img 
+    srcset="{{ section.settings.image | image_url }}" 
+    loading="lazy"
+    alt="{{ section.settings.image.alt | escape }}"
+    class="w-full object-cover object-center"
+  >
+  {% comment %} CTA box {% endcomment %}
+  <div class="absolute top-0 w-2/5 h-3/4 bg-[#F0EEEC] backdrop-opacity-80">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.description }}</p>
+    <a 
+      href="{{ block.settings.button_link }}"
+      class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}">
+      {{ block.settings.button_label | escape }}
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.cta-banner.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.cta-banner.settings.image.label"
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Title"
+    },
+    {
+      "id": "description",
+      "type": "text",
+      "label": "Description",
+      "default": "Some text here."
+    },
+    {
+      "type": "buttons",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "t:sections.cta-banner.blocks.buttons.settings.button_label.label",
+          "info": "t:sections.cta-banner.blocks.buttons.settings.button_label.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.cta-banner.blocks.buttons.settings.button_link.label"
+        }
+      ]
+    }
+  ]
+  ,
+  "presets": [
+    {
+      "name": "Call to Action",
+      "category": "Promotional",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "buttons"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
