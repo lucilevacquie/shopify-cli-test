@@ -1,20 +1,22 @@
-<!-- Masonry Grid Title -->
-<h2>{{ section.settings.masonry-grid }}</h2>
-<!-- Loop through each block -->
-<div id="shopify-section-masonry-grid" class="masonry-grid">
-    {% for block in section.blocks %}
-        <a href="{{ block.settings.url }}" class="grid-item">
-            <img 
-                src="{{ block.settings.image | image_url}}" 
-                alt="{{ block.settings.text }}"
-                loading="lazy"
-                width="600"
-                height="auto"
-            >
-            <h3>{{ block.settings.text }}</h3>
-        </a>
-    {% endfor %}
-</div>
+<section class="page-width">
+    <!-- Masonry Grid Title -->
+    <h2>{{ section.settings.masonry-grid }}</h2>
+    <!-- Loop through each block -->
+    <div id="shopify-section-masonry-grid" class="masonry-grid grid">
+        {% for block in section.blocks %}
+            <a href="{{ block.settings.url }}" class="grid-item">
+                <img 
+                    src="{{ block.settings.image | image_url}}" 
+                    alt="{{ block.settings.text }}"
+                    loading="lazy"
+                    width="600"
+                    height="auto"
+                >
+                <h3>{{ block.settings.text }}</h3>
+            </a>
+        {% endfor %}
+    </div>
+</section>
 
 {% schema %}
 {
@@ -66,6 +68,6 @@
     var grid = document.querySelector('.masonry-grid');
     var msnry = new Masonry(grid, {
         itemSelector: '.grid-item',
-        columnWidth: 600
+        columnWidth: '33%'
     })
 {% endjavascript %}
