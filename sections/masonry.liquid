@@ -1,0 +1,50 @@
+<div id="shopify-section-masonry-grid" class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+</div>
+
+{% schema %}
+{
+    "name": "Masonry Grid",
+    "settings": [
+        {
+            "id": "masonry-grid",
+            "type": "image_picker",
+            "label": "Add a masonry grid"
+        }
+    ],
+    "blocks": [
+        {
+            "name": "masonry-image",
+            "type": "masonry_image",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Add collection image"
+                },
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+     {
+       "name": "Mansonry Grid",
+       "blocks": [
+         {
+           "type": "masonry_image"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}

@@ -508,6 +508,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   visibility: visible;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -536,8 +548,24 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+.h-\[448px\] {
+  height: 448px;
+}
+
+.h-3\/4 {
+  height: 75%;
+}
+
 .w-full {
   width: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.w-2\/5 {
+  width: 40%;
 }
 
 .border-collapse {
@@ -595,8 +623,23 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(73 79 69 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#F0EEEC\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 238 236 / var(--tw-bg-opacity));
+}
+
 .bg-white\/75 {
   background-color: rgb(255 255 255 / 0.75);
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.object-center {
+  -o-object-position: center;
+     object-position: center;
 }
 
 .uppercase {
@@ -655,6 +698,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .backdrop-opacity-40 {
   --tw-backdrop-opacity: opacity(0.4);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.backdrop-opacity-80 {
+  --tw-backdrop-opacity: opacity(0.8);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
           backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
