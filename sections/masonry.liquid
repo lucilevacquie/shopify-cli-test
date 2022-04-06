@@ -2,7 +2,7 @@
     <!-- Masonry Grid Title -->
     <h2>{{ section.settings.masonry-grid }}</h2>
     <!-- Loop through each block -->
-    <div id="shopify-section-masonry-grid" class="masonry-grid grid">
+    <div id="shopify-section-masonry-grid" class="masonry-grid flex justify-between">
         {% for block in section.blocks %}
             <a href="{{ block.settings.url }}" class="grid-item">
                 <img 
@@ -68,6 +68,6 @@
     var grid = document.querySelector('.masonry-grid');
     var msnry = new Masonry(grid, {
         itemSelector: '.grid-item',
-        columnWidth: '33%'
+        columnWidth: 450
     })
 {% endjavascript %}
